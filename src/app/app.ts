@@ -24,8 +24,8 @@ export class App {
     this.form$ = formStore.select(formFeature.selectFormState);
     
     this.form = fb.group({
-      name: ['', Validators.minLength(3)],
-      email: ['', Validators.email],
+      name: ['', [Validators.minLength(3), Validators.required]],
+      email: ['', [Validators.email, Validators.required]],
     });
   }
 
